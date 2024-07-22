@@ -4,6 +4,7 @@ import pytz
 from arrow import Arrow
 from pydantic import BaseModel
 
+
 class BasicModel(BaseModel):
     class Config:
         arbitrary_types_allowed = True
