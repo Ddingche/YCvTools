@@ -5,7 +5,7 @@ from typing import List, Tuple
 
 from pydantic import Field
 
-from YCvTools.schemas.base import BaseModel # type: ignore
+from YCvTools.schemas.base import BaseModel  # type: ignore
 
 
 class DataSet(BaseModel):
@@ -18,7 +18,7 @@ class DataSet(BaseModel):
     txt_dir: str = Field(
         ..., description="Path to the directory containing the txt files"
     )
-    random_seed: int = Field(42, description="Seed for random number generator")
+    random_seed: int = Field(42, description="Seed for random generator")
 
     @property
     def data_nums(self):
