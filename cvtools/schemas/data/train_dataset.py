@@ -5,7 +5,7 @@ from typing import List, Tuple
 
 from pydantic import Field
 
-from schemas.base import BaseModel
+from cvtools.schemas.base import BaseModel
 
 
 class DataSet(BaseModel):

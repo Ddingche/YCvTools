@@ -1,5 +1,4 @@
-from data.parse import LabelFileParser
-from schemas.data.train_dataset import DataSet
+from cvtools.schemas.data.train_dataset import DataSet
 
 
 class TestDataset:

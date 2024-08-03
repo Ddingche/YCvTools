@@ -1,4 +1,4 @@
-from schemas.data.label_info import LabelInfo
+from cvtools.schemas.data.label_info import LabelInfo
 
 
 class LabelFileParser:
