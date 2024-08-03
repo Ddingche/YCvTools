@@ -1,6 +1,6 @@
 from datetime import datetime
 
-import pytz  # type: ignore
+import pytz
 from arrow import Arrow
 from pydantic import BaseModel
 
