@@ -5,7 +5,7 @@ from typing import List, Tuple
 
 from pydantic import Field
 
-from YCvTools.schemas.base import BaseModel  # type: ignore
+from schemas.base import BaseModel
 
 
 class DataSet(BaseModel):
@@ -22,9 +22,11 @@ class DataSet(BaseModel):
 
     @property
     def data_nums(self):
-        return len(os.listdir(self.image_dir))
+        if os.path.exists(self.image_dir):
+            return len(os.listdir(self.image_dir))
+        else:
+            return 0
 
-    @property
     def split_dataset(
         self, train_ratio: float = 0.8, val_ratio: float = 0.2
     ) -> Tuple[List, List]:
@@ -37,6 +39,8 @@ class DataSet(BaseModel):
         """
         assert train_ratio > 0
         assert val_ratio > 0
+        if self.data_nums <= 0:
+            return [], []
         image_filename_list = glob.glob(self.image_dir + "/*")
         train_image_filename_list = []
         val_image_filename_list = []
