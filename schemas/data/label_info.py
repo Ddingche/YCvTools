@@ -1,6 +1,6 @@
 from pydantic import Field
 
-from ycvtools.schemas.base import BaseModel
+from schemas.base import BaseModel
 
 
 class LabelInfo(BaseModel):

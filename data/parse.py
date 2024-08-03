@@ -1,4 +1,4 @@
-from ycvtools.schemas.data.label_info import LabelInfo
+from schemas.data.label_info import LabelInfo
 
 
 class LabelFileParser:
