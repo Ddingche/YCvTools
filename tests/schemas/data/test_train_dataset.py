@@ -1,4 +1,4 @@
-from cvtools.schemas.data.train_dataset import DataSet
+from cvtools.schemas.data.dataset import DataSet
 
 
 class TestDataset:
