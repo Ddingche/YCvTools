@@ -7,15 +7,15 @@ from typing import List
 
 from pydantic import Field
 
-from cvtools.schemas.base import BaseModel
+from cvtools.schemas.base import BasicModel
 
 
-class Point(BaseModel):
+class Point(BasicModel):
     x: float = Field(default=0.0, description="x axis value")
     y: float = Field(default=0.0, description="y axis value")
 
 
-class Bbox(BaseModel):
+class Bbox(BasicModel):
     left_top: Point = Field(default=Point(x=0.0, y=0.0), description="left top point")
     right_bottom: Point = Field(
         default=Point(x=0.0, y=0.0), description="right bottom point"

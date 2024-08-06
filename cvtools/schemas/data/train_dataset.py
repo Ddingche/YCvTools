@@ -5,10 +5,10 @@ from typing import List, Tuple
 
 from pydantic import Field
 
-from cvtools.schemas.base import BaseModel
+from cvtools.schemas.base import BasicModel
 
 
-class DataSet(BaseModel):
+class DataSet(BasicModel):
     image_dir: str = Field(
         ..., description="Path to the directory containing the images"
     )
