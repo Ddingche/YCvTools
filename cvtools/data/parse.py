@@ -7,7 +7,7 @@ from cvtools.schemas.data.label_info import ImageInfo, InstanceBBox, LabelInfo
 class LabelFileParser:
 
     @staticmethod
-    def xml_parser(xml_path) -> LabelInfo:
+    def xml_parser(xml_path: str) -> LabelInfo:
         """
         parse xml label file
         :param xml_path: xml file path
@@ -17,9 +17,8 @@ class LabelFileParser:
         root = tree.getroot()
         instance_bbox_list = []
         image_size = root.find("size")
-
         image_height = int(image_size.find("height").text)
-        image_weight = int(image_size.find("weight").text)
+        image_weight = int(image_size.find("width").text)
         image_channel = int(image_size.find("depth").text)
         image_info = ImageInfo(
             image_weight=image_weight,
