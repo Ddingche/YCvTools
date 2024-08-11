@@ -1,9 +1,6 @@
-import glob
 import os
-import random
-from typing import List, Tuple
 
-from pydantic import Field
+from pydantic import Field, field_validator
 
 from cvtools.schemas.base import BasicModel
 
@@ -20,34 +17,17 @@ class DataSet(BasicModel):
     )
     random_seed: int = Field(42, description="Seed for random generator")
 
-    @property
-    def data_nums(self):
-        if os.path.exists(self.image_dir):
-            return len(os.listdir(self.image_dir))
-        else:
-            return 0
+    @field_validator("image_dir")
+    def image_dir_validator(cls, v):
+        assert os.path.isdir(v), "Image directory does not exist"
+        assert len(os.listdir(v)) > 0, "Image directory is empty"
 
-    def split_dataset(
-        self, train_ratio: float = 0.8, val_ratio: float = 0.2
-    ) -> Tuple[List, List]:
-        random.seed(self.random_seed)
-        """
-        划分数据集
-        :param train_ratio: 训练集比例
-        :param val_ratio: 验证集比例
-        :return: 训练集和验证集的文件名列表
-        """
-        assert train_ratio > 0
-        assert val_ratio > 0
-        if self.data_nums <= 0:
-            return [], []
-        image_filename_list = glob.glob(self.image_dir + "/*")
-        train_image_filename_list = []
-        val_image_filename_list = []
-        for image_filename in image_filename_list:
-            flag = random.random()
-            if flag < train_ratio:
-                train_image_filename_list.append(image_filename)
-            else:
-                val_image_filename_list.append(image_filename)
-        return train_image_filename_list, val_image_filename_list
+    @field_validator("label_dir")
+    def label_dir_validator(cls, v):
+        assert os.path.isdir(v), "Label directory does not exist"
+        assert len(os.listdir(v)) > 0, "Label directory is empty"
+
+    @field_validator("txt_dir")
+    def txt_dir_validator(cls, v):
+        assert os.path.isdir(v), "txt directory does not exist"
+        assert len(os.listdir(v)) > 0, "txt directory is empty"
