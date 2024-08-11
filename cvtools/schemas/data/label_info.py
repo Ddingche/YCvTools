@@ -11,9 +11,9 @@ class InstanceBBox(Bbox):
 
 
 class ImageInfo(BasicModel):
-    image_weight: int = Field(..., description="图像宽度")
-    image_height: int = Field(..., description="图像高度")
-    image_channel: int = Field(..., description="图像通道数")
+    image_weight: int = Field(default=0, description="图像宽度")
+    image_height: int = Field(default=0, description="图像高度")
+    image_channel: int = Field(default=1, description="图像通道数")
 
 
 class LabelInfo(BasicModel):
