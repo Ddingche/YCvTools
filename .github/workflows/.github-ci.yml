@@ -35,13 +35,6 @@ jobs:
         pip install flake8
         poetry run isort . --check-only
         poetry run black . --check
-
-    - name: build
-      run: |
-        echo $(whoami)
-        pip install -U poetry
-        poetry add coverage="^5.5"
-        poetry build
     - name: pytest
       run: |
         poetry install
