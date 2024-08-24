@@ -17,6 +17,7 @@ build-backend = "poetry.core.masonry.api"
 opencv-python = ["opencv-python"]
 arrow = ["arrow"]
 pydantic = ["pydantic"]
+cv2 = ["opencv-python"]
 
 [tool.mypy]
 ignore_missing_imports = true
