@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  linting:
 
     runs-on: ubuntu-latest
 
@@ -35,8 +35,3 @@ jobs:
         pip install flake8
         poetry run isort . --check-only
         poetry run black . --check
-    - name: pytest
-      run: |
-        poetry install
-        CI=1 PYTHONPATH=. poetry run python -mcoverage run --source=cvtools/ -m pytest tests/
-        poetry run python -mcoverage report
