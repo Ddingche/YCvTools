@@ -12,12 +12,8 @@ class TestLabelFileParser:
 
     @staticmethod
     def build_test_data():
-        image = cv2.imread(
-            ".\\tests\\asset\\dog&cat.jpg"
-        )
-        xml_path = (
-            ".\\tests\\asset\\dog&cat.xml"
-        )
+        image = cv2.imread(".\\tests\\asset\\dog&cat.jpg")
+        xml_path = ".\\tests\\asset\\dog&cat.xml"
         return xml_path, image
 
     @staticmethod
