@@ -13,10 +13,10 @@ class TestLabelFileParser:
     @staticmethod
     def build_test_data():
         image = cv2.imread(
-            "C:\\Users\\26539\\Desktop\\codes\\ycvtools\\tests\\asset\\dog&cat.jpg"
+            ".\\tests\\asset\\dog&cat.jpg"
         )
         xml_path = (
-            "C:\\Users\\26539\\Desktop\\codes\\ycvtools\\tests\\asset\\dog&cat.xml"
+            ".\\tests\\asset\\dog&cat.xml"
         )
         return xml_path, image
 

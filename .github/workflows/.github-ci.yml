@@ -35,3 +35,4 @@ jobs:
         pip install flake8
         poetry run isort . --check-only
         poetry run black . --check
+        poetry run flake8 .
