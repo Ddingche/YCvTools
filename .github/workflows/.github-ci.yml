@@ -31,6 +31,7 @@ jobs:
         pip install black
         pip install mypy
         pip install types-pytz
+        pip install types-requests
         pip install flake8
         poetry run isort . --check-only
         poetry run black . --check
