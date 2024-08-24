@@ -3,7 +3,7 @@ name = "ycvtools"
 version = "0.1.0"
 description = "a cv tool for cv engineer"
 authors = ["叶纯 <ye971249@gmail.com>"]
-readme = "readme.md"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
