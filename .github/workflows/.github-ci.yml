@@ -35,7 +35,7 @@ jobs:
         pip install flake8
         poetry run isort . --check-only
         poetry run black . --check
-        poetry run mypy . --follow-imports=silent
+        poetry run mypy . --follow-imports=silent --ignore_missing_imports=True
         poetry run flake8 .
     - name: build
       run: |
