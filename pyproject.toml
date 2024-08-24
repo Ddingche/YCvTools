@@ -3,7 +3,7 @@ name = "ycvtools"
 version = "0.1.0"
 description = "a cv tool for cv engineer"
 authors = ["叶纯 <ye971249@gmail.com>"]
-readme = "README.md"
+readme = "readme.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -12,9 +12,6 @@ python = "^3.9"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-opencv-python = ["opencv-python"]
-arrow = ["arrow"]
-pydantic = ["pydantic"]
 
 [dependencies]
 opencv-python = ["opencv-python"]
